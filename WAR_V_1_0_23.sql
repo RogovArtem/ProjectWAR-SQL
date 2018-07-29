@@ -1,0 +1,25 @@
+-- Random BS Removal
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '1299174';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '1299175';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074361';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074360';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074358';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074356';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074357';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074355';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074354';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074347';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074342';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074368';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074340';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074339';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074335';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074297';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074316';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074296';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074295';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074314';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074319';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074293';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074320';
+DELETE FROM `war_world`.`gameobject_spawns` WHERE `Guid` = '2074321';
