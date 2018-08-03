@@ -1,0 +1,25 @@
+-- sentinel gear fix 2
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434780');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:13;3:35;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434790');
+UPDATE `war_world`.`item_infos` SET `Stats` = '4:19;6:13;8:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434711');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434784');
+UPDATE `war_world`.`item_infos` SET `Stats` = '3:35;4:19;9:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434786');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:13;3:35;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434715');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434785');
+UPDATE `war_world`.`item_infos` SET `Stats` = '4:19;6:13;8:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434783');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;7:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434789');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434713');
+UPDATE `war_world`.`item_infos` SET `Stats` = '6:19;5:13;9:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434714');
+UPDATE `war_world`.`item_infos` SET `Stats` = '6:19;5:13;9:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434791');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434788');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434708');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434709');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;7:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434712');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434718');
+UPDATE `war_world`.`item_infos` SET `Stats` = '6:19;5:13;9:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434787');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:19;4:35;7:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434716');
+UPDATE `war_world`.`item_infos` SET `Stats` = '3:35;4:19;9:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434782');
+UPDATE `war_world`.`item_infos` SET `Stats` = '1:35;4:13;5:19;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434781');
+UPDATE `war_world`.`item_infos` SET `Stats` = '4:19;6:13;8:35;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434717');
+UPDATE `war_world`.`item_infos` SET `Stats` = '3:35;4:19;9:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434710');
+UPDATE `war_world`.`item_infos` SET `Stats` = '3:35;4:19;9:13;79:14;0:0;0:0;0:0;0:0;0:0;0:0;0:0;0:0;' WHERE (`Entry` = '434719');
