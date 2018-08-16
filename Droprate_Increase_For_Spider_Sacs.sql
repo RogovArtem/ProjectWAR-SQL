@@ -1,1 +1,1 @@
-UPDATE `name`.`loot_groups` SET `DropChance` = '1' WHERE (`Entry` = '273');
+UPDATE `war_world`.`loot_groups` SET `DropChance` = '1' WHERE (`Entry` = '273');
