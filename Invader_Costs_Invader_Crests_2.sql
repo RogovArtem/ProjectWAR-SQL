@@ -1,0 +1,1 @@
+UPDATE war_world.vendor_items SET ReqItems(400,208470)(100,208429) WHERE ItemId BETWEEN 434912 AND 435055;
