@@ -1,7 +1,10 @@
-
 ## Create vendor Order
-INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('2500944', 'Joachim Schonburg-Clauchau', '1218', '0', '50', '50', '40', '40', '69', '5', '18', '0', '161', '46', '0', '1000', '0', '0', '29044', '3', '41167342103391596', '', '16', '91', '', '0', '421', '0', '1.00', '1.00', '0', '0', '0');insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('420', '434912',0, '(1,208429)',0,0);
-INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `States`, `FigLeafData`, `BaseRadiusUnits`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES(2500943,'Ananke Darkweaver',27,0,52,52,40,40,130,5,0,0,10,0,0,0,0,0,0,0,'0','',0,0,'0',0,420,NULL,NULL,NULL,0,1.00,1.00,0,0,0)
+delete from `war_world`.`creature_protos` where entry = 2500944
+delete from `war_world`.`creature_protos` where entry = 2500943
+
+INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('2500944', 'Joachim Schonburg-Clauchau', '1218', '0', '50', '50', '40', '40', '69', '5', '18', '0', '161', '46', '0', '1000', '0', '0', '29044', '3', '41167342103391596', '', '16', '91', '', '0', '421', '0', '1.00', '1.00', '0', '0', '0');
+
+INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `States`, `FigLeafData`, `BaseRadiusUnits`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES('2500943','Ananke Darkweaver',27,0,52,52,40,40,130,5,0,0,10,0,0,0,0,0,0,0,'0','',0,0,'0',0,420,NULL,NULL,NULL,0,1.00,1.00,0,0,0);
 
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('2500943', '10', '3260', '0', '0', '0');
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('2500943', '11', '8369', '0', '0', '0');
@@ -28,7 +31,7 @@ values (7034679,2500943,161,440506,152423,17380,2004,0,0,0,0,0,0,0,1);
 INSERT INTO `war_world`.`creature_spawns` (`Guid`, `Entry`, `ZoneId`, `WorldX`, `WorldY`, `WorldZ`, `WorldO`, `Icone`, `Emote`, `Faction`, `WaypointType`, `Level`, `Oid`, `RespawnMinutes`, `Enabled`) 
 values (7034680,2500944,162,117884,147777,13734,994,18,0,0,0,0,0,0,1);
 
-
+insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('420', '434912',0, '(1,208429)',0,0);
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('420', '434913',0, '(1,208429)',0,0);
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('420', '434914',0, '(1,208429)',0,0);
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('420', '434915',0, '(1,208429)',0,0);
@@ -317,3 +320,6 @@ insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunl
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('421', '435053',0, '(1,208429)',0,0);
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('421', '435054',0, '(1,208429)',0,0);
 insert into war_world.vendor_items (vendorid, itemid, price, reqitems, reqtokunlock, reqguildlvl) values ('421', '435055',0, '(1,208429)',0,0);
+
+
+
