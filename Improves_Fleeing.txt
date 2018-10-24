@@ -1,0 +1,21 @@
+INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `BuffLine`, `ability_modifiers_ID`) VALUES ('27820', 'Improved Flee I', '245', 'Flee', '2', '0', 'SwitchDuration', '15', '1', 'd88d6278-7ccb-11e3-ac5a-bc5ff43612d1');
+
+INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `BuffLine`, `ability_modifiers_ID`) VALUES ('27821', 'Improved Flee II', '247', 'Panic', '2', '0', 'SwitchDuration', '0', '1', 'd91e681d-7ccb-11e3-ac5a-bc5ff43612d1');
+
+
+INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `BuffClassString`, `MaxStack`, `PersistsOnDeath`) VALUES ('27820', 'Improved Flee I', 'Career', '1', '1');
+
+INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `BuffClassString`, `MaxStack`, `PersistsOnDeath`) VALUES ('27821', 'Improved Flee II', 'Career', '1', '1');
+
+
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `SecondaryValue`, `InvokeOn`) VALUES ('27820', 'Improved Flee I', '0', '0', 'RegisterModifiers', '0', '0', '5');
+
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `InvokeOn`, `BuffLine`, `NoAutoUse`) VALUES ('27820', 'Improved Flee I', '1', '0', 'AddBuffLine', '1', '1', '1', '0');
+
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `SecondaryValue`, `InvokeOn`) VALUES ('27821', 'Improved Flee II', '0', '0', 'RegisterModifiers', '0', '0', '5');
+
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `InvokeOn`, `BuffLine`, `NoAutoUse`) VALUES ('27821', 'Improved Flee II', '1', '0', 'AddBuffLine', '1', '1', '1', '0');
+
+
+
+dont know if the ability_modifiers_ID of ability_modifiers are right !
