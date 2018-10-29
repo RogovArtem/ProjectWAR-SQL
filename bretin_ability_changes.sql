@@ -87,3 +87,9 @@ INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affectin
 
 
 
+#rampage
+UPDATE `war_world`.`buff_commands` SET `SecondaryValue` = '100' WHERE (`Entry` = '1459') and (`CommandID` = '0') and (`CommandSequence` = '0');
+UPDATE `war_world`.`buff_commands` SET `SecondaryValue` = '100' WHERE (`Entry` = '1459') and (`CommandID` = '0') and (`CommandSequence` = '1');
+#elite training
+UPDATE `war_world`.`buff_infos` SET `FriendlyEffectID` = NULL WHERE (`Entry` = '9347');
+
