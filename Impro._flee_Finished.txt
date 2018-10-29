@@ -1,0 +1,11 @@
+INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `BuffLine`, `ability_modifiers_ID`) VALUES ('27820', 'Improved Flee I', '245', 'Flee', '2', '0', 'SwitchDuration', '15', '1', '7146505b-d93b-11e8-bf2a-00ff128066ec');
+INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `BuffLine`, `ability_modifiers_ID`) VALUES ('27821', 'Improved Flee II', '247', 'Panic!', '2', '0', 'SwitchParameters', '1', '1', 'uuid()');
+INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `BuffLine`, `ability_modifiers_ID`) VALUES ('27821', 'Improved Flee II', '247', 'Panic!', '2', '0', 'SwitchDuration', '1', '1', 'uuid()');
+
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `SecondaryValue`, `InvokeOn`, `Target`) VALUES ('27820', 'Improved Flee I', '0', '0', 'RegisterModifiers', '0', '0', '5', 'Host');
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `InvokeOn`, `Target`, `BuffLine`, `NoAutoUse`) VALUES ('27820', 'Improved Flee I', '1', '0', 'AddBuffLine', '1', '1', 'Host', '1', '0');
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `SecondaryValue`, `InvokeOn`, `Target`) VALUES ('27821', 'Improved Flee II', '0', '0', 'RegisterModifiers', '0', '0', '5', 'Host');
+INSERT INTO `war_world`.`buff_commands` (`Entry`, `Name`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `InvokeOn`, `Target`, `BuffLine`, `NoAutoUse`) VALUES ('27821', 'Improved Flee II', '1', '0', 'AddBuffLine', '1', '1', 'Host', '1', '0');
+
+INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `MaxCopies`, `MaxStack`, `PersistsOnDeath`) VALUES ('27820', 'Improved Flee I', '1', '1', '1');
+INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `MaxCopies`, `MaxStack`, `PersistsOnDeath`) VALUES ('27821', 'Improved Flee II', '1', '1', '1');
