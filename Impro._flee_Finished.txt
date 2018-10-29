@@ -50,3 +50,13 @@ DELETE FROM `war_world`.`buff_infos` WHERE (`Entry` = '27821');
 INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `MaxCopies`, `MaxStack`, `Duration`, `Silent`) VALUES ('245', 'Flee', '1', '1', '10', '1');
 INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `MaxCopies`, `MaxStack`, `PersistsOnDeath`) VALUES ('27820', 'Improved Flee I', '1', '1', '1');
 INSERT INTO `war_world`.`buff_infos` (`Entry`, `Name`, `MaxCopies`, `MaxStack`, `PersistsOnDeath`) VALUES ('27821', 'Improved Flee II', '1', '1', '1');
+
+
+
+DELETE FROM `war_world`.`characterinfo_renown` WHERE (`SpellId` = '10034');
+DELETE FROM `war_world`.`characterinfo_renown` WHERE (`SpellId` = '10035');
+
+INSERT INTO `war_world`.`characterinfo_renown` (`SpellId`, `Name`, `ID`, `CommandName`, `Stat`, `Value`, `Passive`, `Tree`, `Position`, `Renown_Costs`, `Slotreq`, `Unk`) VALUES ('10034', 'Improved Flee I', '74', 'AddBuff', '0', '27820', '0', '13', '10', '10', '0', '0200006CAC0001141A0100000000000000000000000000');
+INSERT INTO `war_world`.`characterinfo_renown` (`SpellId`, `Name`, `ID`, `CommandName`, `Stat`, `Value`, `Passive`, `Tree`, `Position`, `Renown_Costs`, `Slotreq`, `Unk`) VALUES ('10035', 'Improved Flee II', '75', 'AddBuff', '0', '27821', '0', '13', '11', '10', '10', '0200006CAD0000141A0100000000000000000000000000');
+
+
