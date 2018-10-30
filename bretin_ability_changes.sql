@@ -7,8 +7,10 @@ UPDATE `war_world`.`buff_infos` SET `Duration`='3' WHERE `Entry`='3167';
 ## Machine Gun
 UPDATE `war_world`.`buff_infos` SET `Interval`='500' WHERE `Entry`='22';
 UPDATE `war_world`.`buff_infos` SET `Interval`='500' WHERE `Entry`='421';
+UPDATE `war_world`.`ability_damage_heals` SET `StatDamageScale`='1' WHERE `Entry`='22' and`Index`='1' and`ParentCommandID`='0' and`ParentCommandSequence`='0';
 
-##Bugman's Brew
+
+##Bugman's Brew ------------------------------- NOT RDY JUST YET!!!!!!!!!!
 UPDATE `war_world`.`buff_infos` SET `AuraPropagation`=null WHERE `Entry`='32';
 
 #1k1 Dark Blessings
@@ -19,6 +21,10 @@ UPDATE `war_world`.`buff_infos` SET `Duration`='10' WHERE `Entry`='1644';
 
 #Sigmar's Shield
 UPDATE `war_world`.`buff_infos` SET `Duration`=null WHERE `Entry`='3752';
+UPDATE `war_world`.`buff_infos` SET `Duration`='20' WHERE `Entry`='3752';
+UPDATE `war_world`.`buff_infos` SET `Interval`=NULL WHERE `Entry`='3752';
+
+
 
 #'Ere We Go!
 UPDATE `war_world`.`buff_infos` SET `MaxStack`='6' WHERE `Entry`='1902';
@@ -33,6 +39,7 @@ UPDATE `war_world`.`abilities` SET `Cooldown`='5' WHERE `Entry`='424';
 #Warping Energy
 UPDATE `war_world`.`abilities` SET `Cooldown`='5' WHERE `Entry`='445';
 
+
 # lasting Chaos Daemon
 UPDATE `war_world`.`buff_commands` SET `Target`='AllyOrSelf' WHERE `Entry`='8514' and`CommandID`='0' and`CommandSequence`='0';
 
@@ -42,15 +49,18 @@ UPDATE `war_world`.`buff_commands` SET `Target`='AllyOrSelf' WHERE `Entry`='1556
 # sigmars shield
 UPDATE `war_world`.`buff_commands` SET `InvokeOn`='0', `RetriggerInterval`='1' WHERE `Entry`='3752' and`CommandID`='0' and`CommandSequence`='0';
 UPDATE `war_world`.`buff_commands` SET `PrimaryValue`='-20', `InvokeOn`='0', `EventIDString`='WasAttacked' WHERE `Entry`='3752' and`CommandID`='1' and`CommandSequence`='0';
+UPDATE `war_world`.`buff_infos` SET `Duration`='20' WHERE `Entry`='3752';
 
 #rampage
 UPDATE `war_world`.`buff_commands` SET `CommandName`='ModifyStat' WHERE `Entry`='1459' and`CommandID`='0' and`CommandSequence`='1';
 UPDATE `war_world`.`buff_commands` SET `CommandName`='ModifyStat' WHERE `Entry`='1459' and`CommandID`='0' and`CommandSequence`='0';
+UPDATE `war_world`.`buff_commands` SET `SecondaryValue`='1000' WHERE `Entry`='1459' and`CommandID`='0' and`CommandSequence`='0';
+UPDATE `war_world`.`buff_commands` SET `SecondaryValue`='1000' WHERE `Entry`='1459' and`CommandID`='0' and`CommandSequence`='1';
 
-## Energy of Vaul
+## Energy of Vaul------------------------------- NOT RDY JUST YET!!!!!!!!!!
 UPDATE `war_world`.`ability_commands` SET `Target`='AllyOrSelf' WHERE `Entry`='9274' and`CommandID`='2' and`CommandSequence`='0';
 
-## Fury of Da Green
+## Fury of Da Green------------------------------- NOT RDY JUST YET!!!!!!!!!!
 UPDATE `war_world`.`ability_commands` SET `Target`='AllyOrSelf' WHERE `Entry`='1935' and`CommandID`='2' and`CommandSequence`='0';
 
 #Machine Gun
@@ -86,10 +96,30 @@ UPDATE `war_world`.`ability_modifier_checks` SET `ability_modifier_checks_ID` = 
 INSERT INTO `war_world`.`ability_modifiers` (`Entry`, `SourceAbility`, `Affecting`, `AffectedAbility`, `PreOrPost`, `Sequence`, `ModifierCommandName`, `PrimaryValue`, `ability_modifiers_ID`) VALUES ('8197', 'Crown of Fire', '8164', 'Flames of Rhuin', '2', '0', 'SetEventChance', '75', '7faa28ed-8b2b-11e6-b8e9-00ff0731187a');
 
 
-
-#rampage
-UPDATE `war_world`.`buff_commands` SET `SecondaryValue` = '100' WHERE (`Entry` = '1459') and (`CommandID` = '0') and (`CommandSequence` = '0');
-UPDATE `war_world`.`buff_commands` SET `SecondaryValue` = '100' WHERE (`Entry` = '1459') and (`CommandID` = '0') and (`CommandSequence` = '1');
 #elite training
 UPDATE `war_world`.`buff_infos` SET `FriendlyEffectID` = NULL WHERE (`Entry` = '9347');
+
+
+#warping energy
+UPDATE `war_world`.`abilities` SET `Cooldown`='5' WHERE `Entry`='56';
+
+#Force of Fury
+UPDATE `war_world`.`buff_commands` SET `CommandName`='ModifyStat' WHERE `Entry`='9346' and`CommandID`='1' and`CommandSequence`='0';
+UPDATE `war_world`.`ability_commands` SET `Target`='Caster' WHERE `Entry`='9346' and`CommandID`='0' and`CommandSequence`='1';
+INSERT INTO `war_world`.`ability_commands` (`Entry`, `AbilityName`, `CommandID`, `CommandSequence`, `CommandName`, `PrimaryValue`, `Target`) VALUES ('9346', 'Force of Fury', '0', '0', 'InvokeBuff', '9346', 'Caster');
+
+#Crown of Fire
+UPDATE `war_world`.`ability_modifiers` SET `BuffLine`='1' WHERE `ability_modifiers_ID`='7faa28ed-8b2b-11e6-b8e9-00ff0731187a';
+
+#Frozen Fury
+UPDATE `war_world`.`ability_modifiers` SET `SecondaryValue`=NULL WHERE `ability_modifiers_ID`='7faa28ed-8b2b-11e6-b8e9-00ff0731187a';
+UPDATE `war_world`.`ability_modifiers` SET `SecondaryValue`=NULL WHERE `ability_modifiers_ID`='7fa9ce45-8b2b-11e6-b8e9-00ff0731187a';
+
+#Sigmar's Grace
+UPDATE `war_world`.`ability_commands` SET `EffectRadius`='100' WHERE `Entry`='8269' and`CommandID`='0' and`CommandSequence`='0';
+
+#Whirling Axe
+UPDATE `war_world`.`ability_damage_heals` SET `MinDamage`='10', `MaxDamage`='75' WHERE `Entry`='9188' and`Index`='1' and`ParentCommandID`='0' and`ParentCommandSequence`='0';
+
+
 
