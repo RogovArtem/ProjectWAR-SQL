@@ -121,5 +121,7 @@ UPDATE `war_world`.`ability_commands` SET `EffectRadius`='100' WHERE `Entry`='82
 #Whirling Axe
 UPDATE `war_world`.`ability_damage_heals` SET `MinDamage`='10', `MaxDamage`='75' WHERE `Entry`='9188' and`Index`='1' and`ParentCommandID`='0' and`ParentCommandSequence`='0';
 
+##Elite training
+UPDATE `war_world`.`ability_commands` SET `Target` = 'Caster' WHERE (`Entry` = '9347') and (`CommandID` = '0') and (`CommandSequence` = '1');
 
 
