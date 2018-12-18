@@ -22,6 +22,10 @@ UPDATE `war_world`.`characterinfo` SET `Region` = '8', `ZoneId` = '100', `WorldX
 UPDATE `war_world`.`characterinfo` SET `Region` = '8', `ZoneId` = '100', `WorldX` = '847879', `WorldY` = '829970', `WorldZ` = '8006', `WorldO` = '3254' WHERE (`CareerLine` = '22');
 UPDATE `war_world`.`characterinfo` SET `Region` = '8', `ZoneId` = '100', `WorldX` = '847879', `WorldY` = '829970', `WorldZ` = '8006', `WorldO` = '3254' WHERE (`CareerLine` = '23');
 UPDATE `war_world`.`characterinfo` SET `Region` = '8', `ZoneId` = '100', `WorldX` = '847879', `WorldY` = '829970', `WorldZ` = '8006', `WorldO` = '3254' WHERE (`CareerLine` = '24');
+
+delete from war_world.quests_creature_starter where entry = 30361;
+delete from war_world.quests_creature_starter where entry = 51821;
+
 INSERT INTO war_world.quests_creature_starter (Entry, CreatureID) VALUES ('30361', '98325');
 INSERT INTO war_world.quests_creature_starter (Entry, CreatureID) VALUES ('51821', '198');
 
