@@ -129,7 +129,11 @@ UPDATE `war_world`.`ability_damage_heals` SET `MinDamage` = '150', `MaxDamage` =
 UPDATE `war_world`.`ability_damage_heals` SET `MinDamage` = '150', `MaxDamage` = '150' WHERE (`Entry` = '8585') and (`Index` = '0') and (`ParentCommandID` = '0') and (`ParentCommandSequence` = '0');
 
 
+#Earthen Renewal
+UPDATE `war_world`.`ability_damage_heals` SET `DamageType` = 'RawHealing' WHERE (`Entry` = '1426') and (`Index` = '1') and (`ParentCommandID` = '0') and (`ParentCommandSequence` = '0');
+UPDATE `war_world`.`ability_damage_heals` SET `NoCrits` = '1' WHERE (`Entry` = '1426') and (`Index` = '1') and (`ParentCommandID` = '0') and (`ParentCommandSequence` = '0');
 
-
+#Armor of Eternal Servitude
+UPDATE `war_world`.`buff_infos` SET `BuffClassString` = NULL WHERE (`Entry` = '9382');
 
 
