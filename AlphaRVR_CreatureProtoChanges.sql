@@ -194,3 +194,129 @@ delete from `war_world`.`creature_protos` where entry = 86211;
 
 INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `FigLeafData`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`, `Unk2`) VALUES ('86211', 'Heavy Destruction Oil', '1551', '0', '50', '50', '40', '40', '64', '5', '18', '0', '0', '5', '1', '0', '1', '26368', '1', '33383079756513514', '', '32', '161', '0', '0', '0', '0 0 0 8 1 10\r', '0', '1.00', '1.00', '0', '0', '0', '0');
 
+
+
+INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `IsFortress`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`) VALUES ('103', 'Stonewatch', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '0', '2', '1398846', '1038904', '9566', '2082', '1399056', '1034587', '9068', '2110', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `IsFortress`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`) VALUES ('104', 'Fell Landing', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '0', '2', '1398846', '1038904', '9566', '2082', '1399056', '1034587', '9068', '2110', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `IsFortress`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`) VALUES ('105', 'Sining Way', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '0', '2', '1398846', '1038904', '9566', '2082', '1399056', '1034587', '9068', '2110', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (7, 1398984, 928152, 11312, 3080, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (7, 1403259, 928149, 11734, 3080, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (7, 1401183, 928201, 12252, 1050, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (7, 1404960, 928184, 12672, 996, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (8, 1375613, 927330, 11741, 860, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (8, 1372682, 927945, 11897, 938, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (8, 1374208, 927662, 12824, 3018, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (8, 1371289, 928066, 12615, 3080, 3);
+
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (9, 1392460, 975834, 7465, 3600, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (9, 1394289, 977672, 7768, 3468, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (9, 1393561, 977080, 8582, 1516, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (9, 1394964, 978155, 8379, 1402, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (10, 1409007, 1011763, 5017, 3128, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (10, 1412350, 1011993, 5750, 3092, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (10, 1410830, 1011937, 6340, 998, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (10, 1413507, 1012042, 6643, 1054, 3);
+
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (5, 1412895, 846004, 10038, 2854, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (5, 1412895, 846004, 10038, 3044, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (5, 1412895, 846004, 10038, 928, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (5, 1412895, 846004, 10038, 912, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (6, 1397614, 876188, 9107, 2904, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (6, 1400706, 875194, 9312, 2606, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (6, 1399440, 875724, 10066, 902, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (6, 1401703, 874397, 10006, 738, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1399068, 1032502, 8220, 4088, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1405401, 1037932, 8224, 646, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1392997, 1037697, 8194, 3480, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1398972, 1039710, 8536, 34, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1399054, 1034646, 9068, 2042, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1403478, 1039189, 9068, 2720, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1394687, 1039028, 9068, 1134, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (102, 1398840, 1038969, 9562, 2072, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1398235, 824166, 11533, 2004, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1403130, 822812, 11419, 1866, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1393174, 823734, 11783, 2054, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1398076, 819746, 11842, 2024, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1398119, 821929, 12303, 4002, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1402715, 821144, 12303, 3886, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1393156, 821863, 12303, 4048, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (103, 1398032, 818037, 12774, 3968, 3);
+
+
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (28, 967067, 35692, 8092, 2124, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (28, 967827, 1638266, 8152, 2508, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (28, 967330, 1639294, 8954, 150, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (28, 968502, 1637425, 8761, 308, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (27, 984811, 1640045, 11392, 2456, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (27, 986766, 1637285, 11470, 2550, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (27, 986069, 1638309, 12226, 376, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (27, 987460, 1636525, 12171, 366, 3);
+
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (30, 935740, 1637193, 7648, 1006, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (30, 932192, 1637291, 8114, 842, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (30, 933714, 1637227, 8768, 2818, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (30, 930387, 1637645, 9010, 2906, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (29, 891447, 1637149, 5765, 1074, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (29, 888790, 1637269, 6028, 914, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (29, 889540, 1637022, 6759, 2938, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (29, 887550, 1637433, 6833, 2994, 3);
+
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (26, 102810, 1642054, 6237, 3062, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (26, 1032386, 1641694, 6987, 3900, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (26, 1030038, 1642026, 7369, 858, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (26, 1032829, 1643140, 7842, 1884, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (25, 1064315, 1639886, 5219, 3040, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (25, 1068262, 1639817, 5655, 3088, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (25, 1066487, 1639794, 6005, 1006, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (25, 1069712, 1639854, 6276, 1004, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 876487, 1636168, 7539, 1110, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 875075, 1641252, 8036, 1372, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 876198, 1631163, 7696, 936, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 871612, 1635565, 8249, 1046, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 874714, 1635926, 8986, 3060, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 873183, 1640299, 8986, 3406, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 874468, 1631464, 8986, 2888, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (104, 869261, 1635589, 9508, 3056, 3);
+
+
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1086851, 1638524, 6441, 2936, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1088351, 1633496, 6314, 3072, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1088583, 1642887, 6371, 3026, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1093069, 1638357, 7312, 3072, 2);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1089409, 1638190, 7483, 1018, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1090533, 1633822, 7481, 1198, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1090488, 1642586, 7487, 712, 3);
+insert into war_world.keep_spawn_points (KeepId, X, Y, Z, O, SiegeType) values (105, 1094674, 1638366, 7970, 874, 3);
+
+DELETE FROM `war_world`.`keep_infos` WHERE `KeepId`='102';
+INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `IsFortress`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`) VALUES ('102', 'Butcher\'s pass', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '0', '2', '1398846', '1038904', '9566', '2082', '1399056', '1034587', '9068', '2110', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
