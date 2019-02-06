@@ -1,6 +1,21 @@
 /*
 	V1.0 Baseversion
 */
+
+## Keep Setup
+DELETE FROM `war_world`.`zone_areas` WHERE `ZoneId`='204' and`PieceId`='1';
+DELETE FROM `war_world`.`zone_areas` WHERE `ZoneId`='204' and`PieceId`='2';
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Fell Landing', '204', '0', '0', '1', '186', '186', '5750');
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Fell Landing', '204', '61', '2', '2', '186', '186', '5750');
+
+DELETE FROM `war_world`.`keep_infos` WHERE `KeepId`='204';
+INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `IsFortress`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`) VALUES ('204', 'Fell Landing', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '9997', '2', '1398846', '1038904', '9566', '2082', '1399056', '1034587', '9068', '2110', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '9997');
+INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('9997', 'Fell Landing', '2', '0', '204', '22196', '9788', '0', '0', '0', '0', '0', '0', '2', '3', '22', '4', '4', '30', '0', '0');
+
+
+
 /* FellLanding - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1045555');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1045556');
