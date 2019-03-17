@@ -1,7 +1,13 @@
 /*
-	V2.2
+	V3.0
 	Changes:
-	Fixing Fort-Doors
+	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
+	Fixed Lord Loot-Table clearing
+	Fixed Fort_Doors
+	Fixed Zone_Areas	
+	Fixed PQquest_info
+	Adding / Fixed PQquest_objectives
+	Adding / Fixed Chapter_Infos
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -9,6 +15,12 @@ SET SQL_SAFE_UPDATES = 0;
 Delete from war_world.creature_spawns Where zoneid = 4;
 /* Cleaning Keep-NPC in Zone 4 */
 Delete from war_world.keep_creatures Where zoneid = 4;
+/* Cleaning Zone_Areas in Zone 4 */
+Delete from war_world.zone_areas where zoneid = 4;
+/* Cleaning Chapter_Infos in Zone 4 */
+Delete from war_world.chapter_infos where zoneid = 4;
+/* ButchersPass - Clearing Lord Loot-Table */
+DELETE FROM `war_world`.`creature_loots` WHERE Entry = 15959;
 /* ButchersPass - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1025550');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1025551');
@@ -961,8 +973,6 @@ INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `Destro
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('102', '4', '0', '1025561', '1404186', '1042444', '8344', '938', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('102', '4', '0', '1025561', '1403679', '1043085', '8344', '12', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('102', '4', '0', '1025561', '1397255', '1043752', '8264', '3104', '0', '0', '0');
-/* ButchersPass - Clearing Lord Loot-Table */
-DELETE FROM `war_world`.`creature_loots` WHERE (`Entry` = '15959') and (`ItemId` = '207413');
 /* ButchersPass - Deleting Gameobjekts to Avoid duplicate Entrys */
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112945');
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112946');
@@ -1483,30 +1493,38 @@ DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '4365417');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '4365418');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '4439464');
 /* ButchersPass - Adding Keep-Doors */
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '1', '4', '100', '4365416', '1398853', '1038982', '9161', '2096', '1398842', '1039028', '8924', '12', '1398859', '1038860', '8902', '2046');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4365480', '1399063', '1034578', '8505', '28', '1399058', '1034665', '8273', '14', '1399065', '1034510', '8264', '2198');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4367656', '1403530', '1039166', '8505', '732', '1403456', '1039207', '8273', '716', '1403594', '1039125', '8264', '2750');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4367720', '1394651', '1038995', '8505', '1462', '1394731', '1039060', '8275', '3488', '1394610', '1038961', '8264', '1538');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4391656', '1398619', '1044951', '8537', '1490', '1398632', '1044852', '8320', '2068', '1398624', '1045015', '8347', '4');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '3', '4', '72', '4439528', '1392147', '1040308', '8285', '3230', '1392696', '1040477', '8264', '3436', '1392072', '1040284', '8264', '1094');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '3', '4', '72', '4439592', '1405551', '1040818', '8298', '1160', '1404984', '1040734', '8264', '540', '1405646', '1040816', '8232', '2972');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4365417', '1398889', '1041503', '9115', '3150', '1398831', '1041508', '8955', '1058', '1398982', '1041518', '8912', '3188');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4365418', '1400702', '1040045', '9089', '970', '1400632', '1040078', '8957', '906', '1400790', '1040044', '8922', '2934');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4439464', '1402380', '1035103', '8340', '582', '1402096', '1035292', '8264', '522', '1402647', '1034941', '8264', '2488');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '1', '4', '100', '4365416', '1398853', '1038982', '8925', '2096', '1398842', '1039028', '8924', '12', '1398859', '1038860', '8902', '2046');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4365480', '1399063', '1034578', '8265', '28', '1399058', '1034665', '8273', '14', '1399065', '1034510', '8264', '2198');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4367656', '1403530', '1039166', '8265', '732', '1403456', '1039207', '8273', '716', '1403594', '1039125', '8264', '2750');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4367720', '1394651', '1038995', '8265', '1462', '1394731', '1039060', '8275', '3488', '1394610', '1038961', '8264', '1538');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '2', '4', '100', '4391656', '1398619', '1044951', '8350', '1490', '1398632', '1044852', '8320', '2068', '1398624', '1045015', '8347', '4');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '3', '4', '72', '4439528', '1392147', '1040308', '8300', '3230', '1392696', '1040477', '8264', '3436', '1392072', '1040284', '8264', '1094');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '3', '4', '72', '4439592', '1405551', '1040818', '8300', '1160', '1404984', '1040734', '8264', '540', '1405646', '1040816', '8232', '2972');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4365417', '1398889', '1041503', '8960', '3150', '1398831', '1041508', '8955', '1058', '1398982', '1041518', '8912', '3188');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4365418', '1400702', '1040045', '8960', '970', '1400632', '1040078', '8957', '906', '1400790', '1040044', '8922', '2934');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('102', '4', '4', '72', '4439464', '1402380', '1035103', '8300', '582', '1402096', '1035292', '8264', '522', '1402647', '1034941', '8264', '2488');
 /* ButchersPass - Deleting Keep_infos */
 DELETE FROM `war_world`.`keep_infos` WHERE (`KeepId` = '102');
 /* ButchersPass - Adding Keep_infos */
 INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`, `IsFortress`, `GuildClaimObjectiveId`) VALUES ('102', 'Butcher\'s Pass', '2', '4', '4', '2', '1398796', '1040120', '8847', '2068', '10005', '2', '1398846', '1038904', '9566', '2096', '1399056', '1034587', '9068', '2078', '1398854', '1038904', '8903', '42', '1399062', '1034508', '8264', '24', '1394658', '1039010', '9068', '1472', '1403515', '1039163', '9068', '2742', '1394602', '1038964', '8264', '3528', '1403581', '1039131', '8264', '704', '1', '0');
 /* ButchersPass - Deleting Zone_areas */
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '4') and (`PieceId` = '1');
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '4') and (`PieceId` = '2');
+DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '4') and (`PieceId` = '0');
 /* ButchersPass - Adding Zone_areas */
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Butcher\'s Pass', '4', '0', '0', '1', '169', '49', '5837');
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Butcher\'s Pass', '4', '61', '2', '2', '169', '49', '5837');
-/* ButchersPass - Deleting Keep-PQ´s */
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Butcher\'s Pass', '4', '31', '0', '0', '169', '49', '5837');
+/* ButchersPass - Deleting Chapter_Infos */
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '134');
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '133');
+/* ButchersPass - Adding Chapter_Infos */
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('134', '4', 'Fortress: Butcher\'s Pass', '0', '49', 'Greenskin', '0', '31002', '10548', '5837', '201');
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('133', '4', 'Fortress: Butcher\'s Pass ( Order)', '0', '58', 'Dwarfs', '0', '31002', '10548', '5837', '201');
+/* ButchersPass - Deleting pquest_info */
 DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '10005');
-/* ButchersPass - Adding Keep-PQ´s */
+/* ButchersPass - Adding pquest_info */
 INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('10005', 'Butcher\'s Pass Fortress', '2', '0', '4', '30811', '16304', '0', '0', '0', '1398875', '1040304', '10053', '2', '3', '22', '4', '4', '30', '0', '0');
+/* ButchersPass - Deleting pquest_objectives */
+DELETE FROM `war_world`.`pquest_objectives` WHERE (`Guid` = '100105');
+/* ButchersPass - Adding pquest_objectives */
+INSERT INTO `war_world`.`pquest_objectives` (`Guid`, `Entry`, `StageName`, `Type`, `Objective`, `Count`, `Description`, `ObjectId`, `TokCompleted`, `Time`, `NoRespawn`, `SoundId`, `SoundDelay`, `SoundIteration`) VALUES ('100105', '10005', 'Kill the Butcher\'s Pass Fortress Lord', '2', 'Grumtusk Da Ravager', '1', 'Kill the defending Fortress Lord and take control of Butcher\'s Pass Fortress!  ', '15959', '0', '0', '0', '0', '0', '0');
 /* ButchersPass - Deleting ToK Infos */
 DELETE FROM `war_world`.`tok_infos` WHERE (`Entry` = '5837');
 /* ButchersPass - Updating ToK Infos */

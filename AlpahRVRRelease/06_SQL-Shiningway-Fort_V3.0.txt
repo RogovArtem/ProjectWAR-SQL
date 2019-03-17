@@ -1,7 +1,13 @@
 /*
-	V2.2
+	V3.0
 	Changes:
-	Fixing Fort-Doors
+	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
+	Fixed Lord Loot-Table clearing
+	Fixed Fort_Doors
+	Fixed Zone_Areas	
+	Fixed PQquest_info
+	Adding / Fixed PQquest_objectives
+	Adding / Fixed Chapter_Infos
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -9,6 +15,12 @@ SET SQL_SAFE_UPDATES = 0;
 Delete from war_world.creature_spawns Where zoneid = 210;
 /* Cleaning Keep-NPC in Zone 210 */
 Delete from war_world.keep_creatures Where zoneid = 210;
+/* Cleaning Zone_Areas in Zone 210 */
+Delete from war_world.zone_areas where zoneid = 210;
+/* Cleaning Chapter_Infos in Zone 210 */
+Delete from war_world.chapter_infos where zoneid = 210;
+/* Shiningway - Clearing Lord Loot-Table */
+DELETE FROM `war_world`.`creature_loots` WHERE Entry = 38156;
 /*Shiningway - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10505032');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10505026');
@@ -1005,8 +1017,6 @@ INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `Destro
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('105', '210', '10505032', '0', '1096105', '1638530', '8476', '2970', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('105', '210', '10505032', '0', '1095726', '1638568', '8476', '1064', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('105', '210', '10505032', '0', '1096277', '1638596', '7976', '3056', '0', '0', '0');
-/* Shiningway - Clearing Lord Loot-Table */
-DELETE FROM `war_world`.`creature_loots` WHERE (`Entry` = '38156') and (`ItemId` = '207413');
 /* Shiningway - Deleting Gameobject Spawns */
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112501');
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112502');
@@ -1232,15 +1242,23 @@ DELETE FROM `war_world`.`keep_infos` WHERE (`KeepId` = '105');
 /* Shiningway - Adding Keep_infos */
 INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`, `IsFortress`, `GuildClaimObjectiveId`) VALUES ('105', 'Shining Way', '1', '4', '210', '4', '1095885', '1638354', '7446', '1008', '10002', '5', '1094640', '1638377', '7970', '1008', '1089390', '1638191', '7483', '1006', '1094527', '1638373', '7416', '3034', '1089270', '1638191', '6648', '3054', '1090487', '1642591', '7487', '734', '1090527', '1633828', '7481', '1290', '1090372', '1642647', '6648', '2760', '1090415', '1633768', '6648', '3374', '1', '0');
 /* Shiningway - Deleting Zone_areas */
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '210') and (`PieceId` = '1');
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '210') and (`PieceId` = '2');
+DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '210') and (`PieceId` = '0');
 /* Shiningway - Adding Zone_areas */
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Shining Way', '210', '0', '0', '1', '186', '177', '5842');
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Shining Way', '210', '61', '1', '2', '186', '177', '5842');
-/* Shiningway - Deleting Keep-PQ´s */
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Shining Way', '210', '31', '0', '0', '186', '177', '5842');
+/* Shiningway - Deleting Chapter_infos */
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '634');
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '633');
+/* Shiningway - Adding Chapter_infos */
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('634', '210', 'Fortress: Shining Way', '0', '186', 'High Elf', '0', '7970', '32559', '5842', '206');
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('633', '210', 'Fortress: Shining Way (Destro)', '0', '177', 'Dark Elf', '0', '7970', '32559', '5842', '206');
+/* Shiningway - Deleting pquest_info */
 DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '10002');
-/* Shiningway - Adding Keep-PQ´s */
+/* Shiningway - Adding pquest_info */
 INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('10002', 'Shining Way Fortress', '2', '0', '210', '14523', '32704', '0', '0', '0', '1095867', '1638336', '8476', '2', '3', '22', '4', '4', '30', '0', '0');
+/* Shiningway - Deleting pqeust_objectives */
+DELETE FROM `war_world`.`pquest_objectives` WHERE (`Guid` = '100102');
+/* Shiningway - Deleting pqeust_objectives */
+INSERT INTO `war_world`.`pquest_objectives` (`Guid`, `Entry`, `StageName`, `Type`, `Objective`, `Count`, `Description`, `ObjectId`, `TokCompleted`, `Time`, `NoRespawn`, `SoundId`, `SoundDelay`, `SoundIteration`) VALUES ('100102', '10002', 'Kill the Shining Way Fortress Lord', '2', 'Alentrieal^F', '1', 'Kill the defending Fortress Lord and take control of Shining Way Fortress!  ', '38156', '0', '0', '0', '0', '0', '0');
 /* Shiningway - Deleting ToK Infos */
 DELETE FROM `war_world`.`tok_infos` WHERE (`Entry` = '5842');
 /* Shiningway - Updating ToK Infos */

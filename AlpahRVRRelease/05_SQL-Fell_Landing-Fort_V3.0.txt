@@ -1,7 +1,13 @@
 /*
-	V2.2 
+	V3.0
 	Changes:
-	Fixing Fort-Doors
+	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
+	Fixed Lord Loot-Table clearing
+	Fixed Fort_Doors
+	Fixed Zone_Areas	
+	Fixed PQquest_info
+	Adding / Fixed PQquest_objectives
+	Adding / Fixed Chapter_Infos
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -9,6 +15,12 @@ SET SQL_SAFE_UPDATES = 0;
 Delete from war_world.creature_spawns Where zoneid = 204;
 /* Cleaning Keep-NPC in Zone 204 */
 Delete from war_world.keep_creatures Where zoneid = 204;
+/* Cleaning Zone_Areas in Zone 204 */
+Delete from war_world.zone_areas where zoneid = 204;
+/* Cleaning Chapter_Infos in Zone 204 */
+Delete from war_world.chapter_infos where zoneid = 204;
+/* FellLanding - Clearing Lord Loot-Table */
+DELETE FROM `war_world`.`creature_loots` WHERE Entry = 6667;
 /* FellLanding - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1045555');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1045556');
@@ -981,9 +993,6 @@ INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `Destro
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1041404', '874280', '1642600', '8342', '1628', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1045557', '875395', '1642601', '8616', '1776', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1045559', '872423', '1642695', '8273', '1974', '0', '0', '0');
-/* FellLanding - Clearing Lord Loot-Table */
-DELETE FROM `war_world`.`creature_loots` WHERE (`Entry` = '6667') and (`ItemId` = '11837');
-DELETE FROM `war_world`.`creature_loots` WHERE (`Entry` = '6667') and (`ItemId` = '207413');
 /* FellLanding - Deleting Gameobject Spawns */
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112648');
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112649');
@@ -1133,35 +1142,43 @@ INSERT INTO `war_world`.`keep_spawn_points` (`Id`, `KeepId`, `X`, `Y`, `Z`, `O`,
 INSERT INTO `war_world`.`keep_spawn_points` (`Id`, `KeepId`, `X`, `Y`, `Z`, `O`, `SiegeType`) VALUES ('162', '104', '874489', '1631457', '8986', '2880', '3');
 INSERT INTO `war_world`.`keep_spawn_points` (`Id`, `KeepId`, `X`, `Y`, `Z`, `O`, `SiegeType`) VALUES ('163', '104', '869281', '1635590', '9508', '3095', '3');
 /* FellLanding - Deleting Keep-Doors */
+DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213910760');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213909608');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213909800');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213909864');
-DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213910760');
+DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213911016');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213910761');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213910762');
-DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '213911016');
 /* FellLanding - Adding Keep-Doors */
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909608', '874789', '1635937', '8223', '3164', '874700', '1635918', '8144', '1126', '874873', '1635951', '8144', '3164');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909800', '874537', '1631436', '8223', '2984', '874453', '1631458', '8152', '836', '874610', '1631418', '8152', '2896');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909864', '873250', '1640331', '8223', '3462', '873161', '1640295', '8144', '1402', '873318', '1640385', '8144', '3462');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '1', '204', '100', '213910760', '869297', '1635592', '9173', '3026', '869237', '1635593', '8957', '1028', '869367', '1635588', '8936', '3000');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '3', '204', '72', '213910761', '867990', '1636834', '9212', '12', '868004', '1636725', '9021', '2034', '867988', '1636985', '9034', '4');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '3', '204', '72', '213910762', '866873', '1634052', '9188', '2098', '866880', '1634103', '9050', '92', '866877', '1633960', '9026', '2110');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213911016', '860697', '1635802', '10463', '3096', '860640', '1635806', '10376', '1000', '860790', '1635799', '10376', '3146');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '1', '204', '100', '213910760', '869297', '1635592', '8940', '3026', '869237', '1635593', '8957', '1028', '869367', '1635588', '8936', '3000');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909608', '874789', '1635937', '8152', '3164', '874700', '1635918', '8144', '1126', '874873', '1635951', '8144', '3164');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909800', '874537', '1631436', '8152', '2984', '874453', '1631458', '8152', '836', '874610', '1631418', '8152', '2896');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213909864', '873250', '1640331', '8152', '3462', '873161', '1640295', '8144', '1402', '873318', '1640385', '8144', '3462');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '2', '204', '100', '213911016', '860697', '1635802', '10392', '3096', '860640', '1635806', '10376', '1000', '860790', '1635799', '10376', '3146');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '3', '204', '72', '213910761', '867990', '1636834', '9060', '12', '868004', '1636725', '9021', '2034', '867988', '1636985', '9034', '4');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('104', '3', '204', '72', '213910762', '866873', '1634052', '9070', '2098', '866880', '1634103', '9050', '92', '866877', '1633960', '9026', '2110');
 /* FellLanding - Deleting Keep_infos */
 DELETE FROM `war_world`.`keep_infos` WHERE (`KeepId` = '104');
 /* FellLanding - Adding Keep_infos */
 INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`, `IsFortress`, `GuildClaimObjectiveId`) VALUES ('104', 'Fell Landing', '2', '4', '204', '4', '867978', '1635565', '8980', '3074', '10003', '6', '869279', '1635592', '9508', '3082', '874741', '1635924', '8986', '3184', '869349', '1635598', '8936', '1024', '874853', '1635951', '8144', '1140', '874492', '1631443', '8986', '2894', '873195', '1640297', '8986', '3404', '874585', '1631425', '8152', '812', '873288', '1640358', '8144', '1352', '1', '0');
 /* FellLanding - Deleting Zone_areas */
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '204') and (`PieceId` = '1');
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '204') and (`PieceId` = '2');
+DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '204') and (`PieceId` = '0');
 /* FellLanding - Adding Zone_areas */
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Fell Landing', '204', '0', '0', '1', '186', '177', '5841');
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Fell Landing', '204', '61', '2', '2', '186', '177', '5841');
-/* FellLanding - Deleting Keep-PQ´s */
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Fell Landing', '204', '31', '0', '0', '186', '177', '5841');
+/* FellLanding - Deleting Chapter_infos */
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '334');
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '333');
+/* FellLanding - Adding Chapter_infos */
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('334', '204', 'Fortress: Fell Landing', '0', '177', 'Dark Elf', '0', '55615', '30306', '5841', '203');
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('333', '204', 'Fortress: Fell Landing (Order)', '0', '186', 'High Elf', '0', '55615', '30306', '5841', '203');
+/* FellLanding - Deleting pquest_info */
 DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '10003');
-/* FellLanding - Adding Keep-PQ´s */
+/* FellLanding - Adding pquest_info */
 INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('10003', 'Fell Landing Fortress', '2', '0', '204', '48809', '29926', '0', '0', '0', '868009', '1635558', '10017', '2', '3', '22', '4', '4', '30', '0', '0');
+/* FellLanding - Deleting pquest_objectives */
+DELETE FROM `war_world`.`pquest_objectives` WHERE (`Guid` = '100103');
+/* FellLanding - Adding pquest_objectives */
+INSERT INTO `war_world`.`pquest_objectives` (`Guid`, `Entry`, `StageName`, `Type`, `Objective`, `Count`, `Description`, `ObjectId`, `TokCompleted`, `Time`, `NoRespawn`, `SoundId`, `SoundDelay`, `SoundIteration`) VALUES ('100103', '10003', 'Kill the Fell Landing Fortress Lord', '2', 'Lord Elethirean', '1', 'Kill the defending Fortress Lord and take control of Fell Landing Fortress!  ', '6667', '0', '0', '0', '0', '0', '0');
 /* FellLanding - Deleting ToK Infos */
 DELETE FROM `war_world`.`tok_infos` WHERE (`Entry` = '5841');
 /* FellLanding - Updating ToK Infos */

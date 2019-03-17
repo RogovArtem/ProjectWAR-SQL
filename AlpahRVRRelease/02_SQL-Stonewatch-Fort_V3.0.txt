@@ -1,7 +1,13 @@
 /*
-	V2.2
+	V3.0
 	Changes:
-	Fixing Fort-Doors
+	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
+	Fixed Lord Loot-Table clearing
+	Fixed Fort_Doors
+	Fixed Zone_Areas	
+	Fixed PQquest_info
+	Adding / Fixed PQquest_objectives
+	Adding / Fixed Chapter_Infos
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -9,6 +15,12 @@ SET SQL_SAFE_UPDATES = 0;
 Delete from war_world.creature_spawns Where zoneid = 10;
 /* Cleaning Keep-NPC in Zone 10 */
 Delete from war_world.keep_creatures Where zoneid = 10;
+/* Cleaning Zone_Areas in Zone 10 */
+Delete from war_world.zone_areas where zoneid = 10;
+/* Cleaning Chapter_Infos in Zone 10 */
+Delete from war_world.chapter_infos where zoneid = 10;
+/* Stonewatch - Clearing Lord Loot-Table */
+DELETE FROM `war_world`.`creature_loots` WHERE Entry = 6884;
 /* Stonewatch - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10348278');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10316094');
@@ -984,10 +996,10 @@ DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '10616808');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '10616361');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '10616362');
 /* Stonewatch - Adding Keep-Doors */
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '1', '10', '100', '10616360', '1398034', '818065', '12151', '4030', '1398034', '818001', '12146', '2058', '1398034', '818126', '12144', '4066');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616488', '1398116', '821947', '11482', '4020', '1398110', '821890', '11471', '2048', '1398120', '821997', '11464', '4070');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616552', '1402717', '821162', '11482', '3800', '1402710', '821116', '11472', '1868', '1402733', '821219', '11472', '3904');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616744', '1393158', '821881', '11482', '4058', '1393160', '821829', '11472', '2004', '1393156', '821967', '11472', '4082');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '1', '10', '100', '10616360', '1398034', '818065', '12155', '4030', '1398034', '818001', '12146', '2058', '1398034', '818126', '12144', '4066');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616488', '1398116', '821947', '11490', '4020', '1398110', '821890', '11471', '2048', '1398120', '821997', '11464', '4070');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616552', '1402717', '821162', '11490', '3800', '1402710', '821116', '11472', '1868', '1402733', '821219', '11472', '3904');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616744', '1393158', '821881', '11490', '4058', '1393160', '821829', '11472', '2004', '1393156', '821967', '11472', '4082');
 INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '2', '10', '100', '10616808', '1398444', '810806', '12320', '1990', '1398440', '810877', '12312', '14', '1398453', '810736', '12312', '2078');
 INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '3', '10', '72', '10616361', '1396542', '816993', '12175', '984', '1396604', '816986', '12175', '3086', '1396447', '816997', '12146', '1048');
 INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('103', '3', '10', '72', '10616362', '1398006', '815095', '12184', '2020', '1398001', '815170', '12184', '4078', '1398011', '814988', '12144', '2098');
@@ -996,15 +1008,23 @@ DELETE FROM `war_world`.`keep_infos` WHERE (`KeepId` = '103');
 /* Stonewatch - Adding Keep_infos */
 INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`, `IsFortress`, `GuildClaimObjectiveId`) VALUES ('103', 'Stonewatch', '1', '4', '10', '2', '1398042', '817074', '12145', '4092', '10004', '1', '1398039', '818058', '12774', '4084', '1398117', '821929', '12303', '4084', '1398034', '818138', '12144', '2040', '1398112', '822019', '11463', '2028', '1402724', '821160', '12303', '3906', '1393150', '821871', '12303', '12', '1402732', '821221', '11472', '1832', '1393161', '821950', '11472', '2058', '1', '0');
 /* Stonewatch - Deleting Zone_areas */
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '10') and (`PieceId` = '1');
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '10') and (`PieceId` = '2');
+DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '10') and (`PieceId` = '0');
 /* Stonewatch - Adding Zone_areas */
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Stonewatch', '10', '0', '0', '1', '169', '49', '5838');
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Stonewatch', '10', '61', '1', '2', '169', '49', '5838');
-/* Stonewatch - Deleting Keep-PQ´s */
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Stonewatch', '10', '31', '0', '0', '169', '49', '5838');
+/* Stonewatch - Deleting Chapter_infos */
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '434');
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '433');
+/* Stonewatch - Adding Chapter_infos */
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('434', '10', 'Fortress: Stonewatch', '0', '58', 'Dwarf', '0', '29986', '56237', '5838', '204');
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('433', '10', 'Fortress: Stonewatch(Destro)', '0', '49', 'Greenskin', '0', '29986', '56237', '5838', '204');
+/* Stonewatch - Deleting pquest_info */
 DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '10004');
-/* Stonewatch - Adding Keep-PQ´s */
+/* Stonewatch - Adding pquest_info */
 INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('10004', 'Stonewatch Fortress', '2', '0', '10', '29989', '54685', '0', '0', '0', '1398053', '816541', '13222', '2', '3', '22', '4', '4', '30', '0', '0');
+/* Stonewatch - Deleting pquest_objectives */
+DELETE FROM `war_world`.`pquest_objectives` WHERE (`Guid` = '100104');
+/* Stonewatch - Adding pquest_objectives */
+INSERT INTO `war_world`.`pquest_objectives` (`Guid`, `Entry`, `StageName`, `Type`, `Objective`, `Count`, `Description`, `ObjectId`, `TokCompleted`, `Time`, `NoRespawn`, `SoundId`, `SoundDelay`, `SoundIteration`) VALUES ('100104', '10004', 'Kill the Stonewatch Fortress Lord', '2', 'Thragri Highmountain', '1', 'Kill the defending Fortress Lord and take control of Stonewatch Fortress!  ', '6884', '0', '0', '0', '0', '0', '0');
 /* Stonewatch - Deleting ToK Infos */
 DELETE FROM `war_world`.`tok_infos` WHERE (`Entry` = '5838');
 /* Stonewatch - Updating ToK Infos */

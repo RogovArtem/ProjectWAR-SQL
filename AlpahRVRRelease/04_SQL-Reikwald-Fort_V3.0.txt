@@ -1,7 +1,13 @@
 /*
-	V2.2
+	V3.0
 	Changes:
-	Fixing Fort-Doors
+	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
+	Fixed Lord Loot-Table clearing
+	Fixed Fort_Doors
+	Fixed Zone_Areas	
+	Fixed PQquest_info
+	Adding / Fixed PQquest_objectives
+	Adding / Fixed Chapter_Infos
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -9,6 +15,12 @@ SET SQL_SAFE_UPDATES = 0;
 Delete from war_world.creature_spawns Where zoneid = 110;
 /* Cleaning Keep-NPC in Zone 110 */
 Delete from war_world.keep_creatures Where zoneid = 110;	
+/* Cleaning Zone_Areas in Zone 110 */
+Delete from war_world.zone_areas where zoneid = 110;
+/* Cleaning Chapter_Infos in Zone 110 */
+Delete from war_world.chapter_infos where zoneid = 110;
+/* Reikwald - Clearing Lord Loot-Table */
+DELETE FROM `war_world`.`creature_loots` WHERE Entry = 778039;
 /* Reikwald - Deleting new NPC to avoid duplicate Entrys */
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '778039');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10020957');
@@ -22,7 +34,7 @@ DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '1007953');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '10010933');
 DELETE FROM `war_world`.`creature_protos` WHERE (`Entry` = '100932');
 /* Reikwald - Generating new NPC */
-INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('778039', 'Rhinehardt Ortmann', '1005', '0', '75', '80', '45', '46', '71', '5', '0', '0', '30', '0', '0', '0', '0', '0', '0', '0', '0', '', '16', '91', '211', '0', '0', '0', '1.00', '1.00', '0', '0', '0');
+INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('778039', 'Rhinehardt Ortmann', '1005', '0', '75', '80', '45', '46', '71', '5', '0', '0', '30', '0', '0', '1003', '0', '0', '0', '0', '0', '', '16', '91', '211', '0', '0', '0', '1.00', '1.00', '0', '0', '0');
 INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('10020957', 'Reikwald Castigator', '1218', '0', '52', '52', '41', '41', '67', '5', '26', '0', '0', '37', '0', '1000', '0', '0', '27964', '2', '5281558867954766', '', '16', '91', '0', '0', '0', '0', '1.00', '1.00', '0', '0', '0');
 INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('10042261', 'Reikwald Greatsword^m', '1218', '0', '52', '52', '40', '40', '67', '5', '18', '0', '0', '37', '1', '1000', '0', '0', '25112', '7', '60712877724550062', '', '16', '91', '0', '0', '0', '0', '1.00', '1.00', '0', '0', '0');
 INSERT INTO `war_world`.`creature_protos` (`Entry`, `Name`, `Model1`, `Model2`, `MinScale`, `MaxScale`, `MinLevel`, `MaxLevel`, `Faction`, `Ranged`, `Icone`, `Emote`, `Title`, `Unk`, `Unk1`, `Unk2`, `Unk3`, `Unk4`, `Unk5`, `Unk6`, `Flag`, `ScriptName`, `CreatureType`, `CreatureSubType`, `TokUnlock`, `LairBoss`, `VendorID`, `Career`, `PowerModifier`, `WoundsModifier`, `Invulnerable`, `WeaponDPS`, `ImmuneToCC`) VALUES ('10042260', 'Reikwald Honor Guard', '1218', '0', '52', '52', '40', '40', '67', '5', '24', '0', '0', '33', '0', '1000', '0', '0', '25113', '4', '18771418305086624', '', '16', '91', '0', '0', '0', '0', '1.00', '1.00', '0', '0', '0');
@@ -1147,28 +1159,36 @@ DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '115343465');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '115343466');
 DELETE FROM `war_world`.`keep_doors` WHERE (`DoorId` = '115445800');
 /* Reikwald - Adding Keep-Doors */
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '1', '110', '100', '115343464', '1431157', '965691', '15987', '989', '1431158', '965772', '15915', '32', '1431158', '965585', '15904', '2058');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343528', '1431201', '961432', '16032', '11', '1431206', '961351', '15952', '2076', '1431203', '961499', '15960', '4076');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343720', '1426272', '961445', '16032', '44', '1426276', '961355', '15944', '2046', '1426273', '961507', '15944', '8');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343784', '1436112', '961419', '16032', '3618', '1436112', '961271', '15944', '2152', '1436109', '961501', '15944', '4090');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343848', '1431392', '971530', '16207', '4084', '1431389', '971620', '16128', '6', '1431397', '971446', '16117', '2052');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '3', '110', '72', '115343465', '1432974', '966710', '16077', '1024', '1432862', '966713', '15945', '1040', '1433060', '966709', '15912', '3132');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '3', '110', '72', '115343466', '1431291', '968156', '15953', '989', '1431190', '968157', '15939', '1063', '1431355', '968162', '15927', '3120');
-INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '4', '110', '72', '115445800', '1429023', '970563', '16195', '2198', '1429059', '970167', '16121', '2198', '1429016', '970667', '16104', '98');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '1', '110', '100', '115343464', '1431157', '965691', '15915', '989', '1431158', '965772', '15915', '32', '1431158', '965585', '15904', '2058');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343528', '1431201', '961432', '15960', '11', '1431206', '961351', '15952', '2076', '1431203', '961499', '15960', '4076');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343720', '1426272', '961445', '15960', '44', '1426276', '961355', '15944', '2046', '1426273', '961507', '15944', '8');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343784', '1436112', '961419', '15960', '3618', '1436112', '961271', '15944', '2152', '1436109', '961501', '15944', '4090');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '2', '110', '100', '115343848', '1431392', '971530', '16135', '4084', '1431389', '971620', '16128', '6', '1431397', '971446', '16117', '2052');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '3', '110', '72', '115343465', '1432974', '966710', '15945', '1024', '1432862', '966713', '15945', '1040', '1433060', '966709', '15912', '3132');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '3', '110', '72', '115343466', '1431291', '968156', '15950', '989', '1431190', '968157', '15939', '1063', '1431355', '968162', '15927', '3120');
+INSERT INTO `war_world`.`keep_doors` (`KeepId`, `Number`, `ZoneId`, `GameObjectId`, `DoorId`, `X`, `Y`, `Z`, `O`, `TeleportX1`, `TeleportY1`, `TeleportZ1`, `TeleportO1`, `TeleportX2`, `TeleportY2`, `TeleportZ2`, `TeleportO2`) VALUES ('100', '4', '110', '72', '115445800', '1429023', '970563', '16155', '2198', '1429059', '970167', '16121', '2198', '1429016', '970667', '16104', '98');
 /* Reikwald - Deleting Keep_infos */
 DELETE FROM `war_world`.`keep_infos` WHERE (`KeepId` = '100');
 /* Reikwald - Adding Keep_infos */
 INSERT INTO `war_world`.`keep_infos` (`KeepId`, `Name`, `Realm`, `DoorCount`, `ZoneId`, `RegionId`, `X`, `Y`, `Z`, `O`, `PQuestId`, `Race`, `OilX`, `OilY`, `OilZ`, `OilO`, `OilOuterX`, `OilOuterY`, `OilOuterZ`, `OilOuterO`, `RamX`, `RamY`, `RamZ`, `RamO`, `RamOuterX`, `RamOuterY`, `RamOuterZ`, `RamOuterO`, `OilOuter1X`, `OilOuter1Y`, `OilOuter1Z`, `OilOuter1O`, `OilOuter2X`, `OilOuter2Y`, `OilOuter2Z`, `OilOuter2O`, `RamOuter1X`, `RamOuter1Y`, `RamOuter1Z`, `RamOuter1O`, `RamOuter2X`, `RamOuter2Y`, `RamOuter2Z`, `RamOuter2O`, `IsFortress`, `GuildClaimObjectiveId`) VALUES ('100', 'Reikwald', '1', '4', '110', '11', '1431158', '966414', '15955', '2042', '10000', '3', '1431147', '965727', '16455', '2066', '1431198', '961352', '16790', '2022', '1431204', '961368', '15952', '4086', '1431205', '961235', '15952', '52', '1436116', '961300', '16790', '2180', '1426270', '961333', '16790', '2212', '1436119', '961241', '15944', '186', '1426272', '961267', '15935', '4084', '1', '0');
 /* Reikwald - Deleting Zone_areas */
 DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '110') and (`PieceId` = '0');
-DELETE FROM `war_world`.`zone_areas` WHERE (`ZoneId` = '110') and (`PieceId` = '1');
 /* Reikwald - Adding Zone_areas */
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Reikwald', '110', '0', '0', '0', '42', '113', '5840');
-INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Reikwald', '110', '1', '0', '1', '42', '113', '5840');
-/* Reikwald - Deleting Keep-PQ´s */
+INSERT INTO `war_world`.`zone_areas` (`AreaName`, `ZoneId`, `AreaId`, `Realm`, `PieceId`, `OrderInfluenceId`, `DestroInfluenceId`, `TokExploreEntry`) VALUES ('Reikwald', '110', '31', '0', '0', '122', '113', '5840');
+/* Reikwald - Deleting Chapter_infos */
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '534');
+DELETE FROM `war_world`.`chapter_infos` WHERE (`Entry` = '533');
+/* Reikwald - Adding Chapter_infos */
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('534', '110', 'Fortress: Reikwald', '0', '122', 'Empire', '0', '22185', '11125', '5840', '205');
+INSERT INTO `war_world`.`chapter_infos` (`Entry`, `ZoneId`, `Name`, `CreatureEntry`, `InfluenceEntry`, `Race`, `ChapterRank`, `PinX`, `PinY`, `TokEntry`, `TokExploreEntry`) VALUES ('533', '110', 'Fortress: Reikwald (Destro)', '0', '113', 'Chaos', '0', '22185', '11125', '5840', '205');
+/* Reikwald - Deleting pquest_info */
 DELETE FROM `war_world`.`pquest_info` WHERE (`Entry` = '10000');
-/* Reikwald - Adding Keep-PQ´s */
+/* Reikwald - Adding pquest_info */
 INSERT INTO `war_world`.`pquest_info` (`Entry`, `Name`, `Type`, `Level`, `ZoneId`, `PinX`, `PinY`, `TokDiscovered`, `TokUnlocked`, `ChapterId`, `GoldChestWorldX`, `GoldChestWorldY`, `GoldChestWorldZ`, `PQType`, `PQDifficult`, `Chapter`, `PQTier`, `PQCraftingBag`, `PQAreaId`, `SoundPQEnd`, `RespawnID`) VALUES ('10000', 'Reikwald Fortress', '2', '0', '110', '22132', '16551', '0', '0', '0', '1431156', '966823', '16983', '2', '3', '22', '4', '4', '30', '0', '0');
+/* Reikwald - Deleting pquest_objectives */
+DELETE FROM `war_world`.`pquest_objectives` WHERE (`Guid` = '100100');
+/* Reikwald - Deleting pquest_objectives */
+INSERT INTO `war_world`.`pquest_objectives` (`Guid`, `Entry`, `StageName`, `Type`, `Objective`, `Count`, `Description`, `ObjectId`, `TokCompleted`, `Time`, `NoRespawn`, `SoundId`, `SoundDelay`, `SoundIteration`) VALUES ('100100', '10000', 'Kill the Reikwald Fortress Lord', '2', 'Rhinehardt Ortmann', '1', 'Kill the defending Fortress Lord and take control of Reikwald Fortress!  ', '778039', '0', '0', '0', '0', '0', '0');
 /* Reikwald - Deleting ToK Infos */
 DELETE FROM `war_world`.`tok_infos` WHERE (`Entry` = '5840');
 /* Reikwald - Updating ToK Infos */
