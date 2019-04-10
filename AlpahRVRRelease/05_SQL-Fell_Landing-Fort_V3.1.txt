@@ -1,13 +1,7 @@
 /*
-	V3.0
+	V3.1
 	Changes:
-	Adding Clean-Outs for Fort Zones on Specific Tables to eliminate old and wrong entrys
-	Fixed Lord Loot-Table clearing
-	Fixed Fort_Doors
-	Fixed Zone_Areas	
-	Fixed PQquest_info
-	Adding / Fixed PQquest_objectives
-	Adding / Fixed Chapter_Infos
+	Adding Lord Abilities
 */
 /* Disabling Safe-Updates for SQL */
 SET SQL_SAFE_UPDATES = 0;
@@ -993,6 +987,16 @@ INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `Destro
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1041404', '874280', '1642600', '8342', '1628', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1045557', '875395', '1642601', '8616', '1776', '0', '0', '0');
 INSERT INTO `war_world`.`keep_creatures` (`KeepId`, `ZoneId`, `OrderId`, `DestroId`, `X`, `Y`, `Z`, `O`, `KeepLord`, `IsPatrol`, `WaypointGUID`) VALUES ('104', '204', '0', '1045559', '872423', '1642695', '8273', '1974', '0', '0', '0');
+/* FellLanding - Deleting Lord Abilities to Fort-Lord */
+DELETE FROM `war_world`.`creature_abilities` WHERE (`creature_abilities_ID` = '204001ad-0e72-11e7-9ea9-000c29d63948');
+DELETE FROM `war_world`.`creature_abilities` WHERE (`creature_abilities_ID` = '204002ad-0e72-11e7-9ea9-000c29d63948');
+DELETE FROM `war_world`.`creature_abilities` WHERE (`creature_abilities_ID` = '204003ad-0e72-11e7-9ea9-000c29d63948');
+DELETE FROM `war_world`.`creature_abilities` WHERE (`creature_abilities_ID` = '204004ad-0e72-11e7-9ea9-000c29d63948');
+/* FellLanding - Adding Lord Abilities to Fort-Lord */
+INSERT INTO `war_world`.`creature_abilities` (`ProtoEntry`, `AbilityId`, `Cooldown`, `creature_abilities_ID`, `Text`, `TimeStart`, `ActivateAtHealthPercent`, `DisableAtHealthPercent`, `AbilityCycle`, `Active`, `ActivateOnCombatStart`, `RandomTarget`, `TargetFocus`) VALUES ('6667', '5802', '10', '204001ad-0e72-11e7-9ea9-000c29d63948', '', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `war_world`.`creature_abilities` (`ProtoEntry`, `AbilityId`, `Cooldown`, `creature_abilities_ID`, `Text`, `TimeStart`, `ActivateAtHealthPercent`, `DisableAtHealthPercent`, `AbilityCycle`, `Active`, `ActivateOnCombatStart`, `RandomTarget`, `TargetFocus`) VALUES ('6667', '13086', '10', '204002ad-0e72-11e7-9ea9-000c29d63948', '', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `war_world`.`creature_abilities` (`ProtoEntry`, `AbilityId`, `Cooldown`, `creature_abilities_ID`, `Text`, `TimeStart`, `ActivateAtHealthPercent`, `DisableAtHealthPercent`, `AbilityCycle`, `Active`, `ActivateOnCombatStart`, `RandomTarget`, `TargetFocus`) VALUES ('6667', '13098', '10', '204003ad-0e72-11e7-9ea9-000c29d63948', '', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `war_world`.`creature_abilities` (`ProtoEntry`, `AbilityId`, `Cooldown`, `creature_abilities_ID`, `Text`, `TimeStart`, `ActivateAtHealthPercent`, `DisableAtHealthPercent`, `AbilityCycle`, `Active`, `ActivateOnCombatStart`, `RandomTarget`, `TargetFocus`) VALUES ('6667', '4435', '10', '204004ad-0e72-11e7-9ea9-000c29d63948', '', '0', '0', '0', '1', '1', '0', '0', '0');
 /* FellLanding - Deleting Gameobject Spawns */
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112648');
 DELETE FROM `war_world`.`gameobject_spawns` WHERE (`Guid` = '2112649');
