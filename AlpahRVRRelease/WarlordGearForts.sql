@@ -99,3 +99,102 @@ insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, Can
 insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (4, 0, 22, 435209, 1, 0);
 insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (4, 0, 23, 435210, 1, 0);
 insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (4, 0, 24, 435211, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 8, 640763, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 8, 640751, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 2, 640725, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 2, 640737, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 1, 640736, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 1, 640724, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 4, 640739, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 4, 640727, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 4, 12727, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 3, 640726, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 3, 640738, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 9, 640740, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 9, 640728, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 11, 640730, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 11, 640742, 1, 0);
+
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 12, 640743, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 12, 640731, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 10, 640729, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 10, 640741, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 20, 640735, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 20, 640747, 1, 0);
+
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 17, 640744, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 17, 640732, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 19, 640734, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 19, 640746, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 18, 640733, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 18, 640745, 1, 0);
+
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 7, 640750, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 7, 640762, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 6, 640761, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 6, 640749, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 5, 640748, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 5, 640760, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 13, 640764, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 13, 640752, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 16, 640755, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 16, 1298378484, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 15, 640754, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 15, 640766, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 14, 640753, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 14, 640765, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 24, 640759, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 24, 640771, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 21, 640768, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 21, 640756, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 23, 640758, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 23, 640770, 1, 0);
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 22, 640757, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (3, 0, 22, 640769, 1, 0);
+
+
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (2, 0, 0, 1298378485, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (2, 0, 0, 1298378486, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (2, 0, 0, 1298378487, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (2, 0, 0, 1298378488, 1, 0);
+insert into rvr_reward_fort_items (Rarity, RRBand, Class, ItemId, ItemCount, CanAwardDuplicate) values (2, 0, 0, 1298378489, 1, 0);
