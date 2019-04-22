@@ -1,0 +1,10 @@
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '109', `DestructionFeedZoneId` = '109' WHERE (`KeepId` = '100');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '103', `DestructionFeedZoneId` = '103' WHERE (`KeepId` = '101');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '9', `DestructionFeedZoneId` = '9' WHERE (`KeepId` = '102');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '3', `DestructionFeedZoneId` = '3' WHERE (`KeepId` = '103');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '209', `DestructionFeedZoneId` = '209' WHERE (`KeepId` = '104');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '203', `DestructionFeedZoneId` = '203' WHERE (`KeepId` = '105');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '203', `DestructionFeedZoneId` = '203' WHERE (`KeepId` = '104');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '209', `DestructionFeedZoneId` = '209' WHERE (`KeepId` = '105');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '3', `DestructionFeedZoneId` = '3' WHERE (`KeepId` = '102');
+UPDATE `war_world`.`player_keep_spawn` SET `OrderFeedZoneId` = '9', `DestructionFeedZoneId` = '9' WHERE (`KeepId` = '103');
