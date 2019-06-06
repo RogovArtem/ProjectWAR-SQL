@@ -1,0 +1,6 @@
+DELETE FROM `war_world`.`scenario_infos` WHERE (`ScenarioID` = '2220');
+INSERT INTO `war_world`.`scenario_infos` (`ScenarioID`, `Name`, `MinLevel`, `MaxLevel`, `MinPlayers`, `MaxPlayers`, `Type`, `Tier`, `MapID`, `KillPointScore`, `RewardScaler`, `DeferKills`, `Enabled`, `QueueType`, `RegionId`) VALUES ('2220', 'Gauntlet', '1', '40', '0', '12', '15', '4', '133', '5', '1', '0', '1', '3', '133');
+
+INSERT INTO `war_world`.`scenario_objects` (`ScenarioId`, `Identifier`, `ObjectiveName`, `Type`, `WorldPosX`, `WorldPosY`, `PosZ`, `Heading`, `ProtoEntry`, `scenario_objects_ID`) VALUES ('2220', '15', 'Glyph of Fury', 'Flag', '556598', '364774', '5516', '3106', '98730', '11');
+INSERT INTO `war_world`.`scenario_objects` (`ScenarioId`, `Identifier`, `ObjectiveName`, `Type`, `WorldPosX`, `WorldPosY`, `PosZ`, `Heading`, `ProtoEntry`, `scenario_objects_ID`) VALUES ('2220', '16', 'Glyph of Madness', 'Flag', '554130', '364594', '5469', '1024', '98730', '21');
+INSERT INTO `war_world`.`scenario_objects` (`ScenarioId`, `Identifier`, `ObjectiveName`, `Type`, `WorldPosX`, `WorldPosY`, `PosZ`, `Heading`, `ProtoEntry`, `scenario_objects_ID`) VALUES ('2220', '24', 'Warpstone Talisman', 'Flag', '555424', '364779', '5516', '2139', '98730', '32');
