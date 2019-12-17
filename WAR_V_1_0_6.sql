@@ -1,1 +1,0 @@
-UPDATE `war_world`.`abilities` SET `MasteryTree`='0', `Specline`='Core Ability', `Category`='4', `PointCost`='0', `CashCost`='8000' WHERE `Entry`='8373';
