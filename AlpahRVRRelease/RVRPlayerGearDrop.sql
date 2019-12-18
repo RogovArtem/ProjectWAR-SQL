@@ -1,6 +1,6 @@
 SET SQL_SAFE_UPDATES = 0;
 #Deleting Old Entrys to avoid Duplicates
-DELETE FROM `war_world`.`rvr_player_gear_drop` 
+DELETE FROM `war_world`.`rvr_player_gear_drop`;
 
 insert into rvr_player_gear_drop (ItemId, MinimumRenownRank,MaximumRenownRank,Money,DropChance, Career) values (434912, 51, 64,2000, 50, 1);
 insert into rvr_player_gear_drop (ItemId, MinimumRenownRank,MaximumRenownRank,Money,DropChance, Career) values (434913, 51, 64,2000, 50, 2);

@@ -154,8 +154,8 @@ INSERT INTO `instance_boss_spawns` (`Instance_spawns_ID`, `Name`, `Entry`, `Real
 INSERT INTO `instance_boss_spawns` (`Instance_spawns_ID`, `Name`, `Entry`, `Realm`, `Level`, `Emote`, `ZoneID`, `InstanceID`, `BossID`, `SpawnGroupID`, `WorldX`, `WorldY`, `WorldZ`, `WorldO`) VALUES ('63', 'Wight Lord Solithex', '42207', '0', '43', '0', '66', '60', '603', '2003', '1110499', '1119641', '19203', '3732');
 
 
-DELETE FROM `war_world_prod`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600000');
-DELETE FROM `war_world_prod`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600001');
-DELETE FROM `war_world_prod`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600002');
-DELETE FROM `war_world_prod`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600003');
-DELETE FROM `war_world_prod`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600004');
+DELETE FROM `war_world`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600000');
+DELETE FROM `war_world`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600001');
+DELETE FROM `war_world`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600002');
+DELETE FROM `war_world`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600003');
+DELETE FROM `war_world`.`instance_boss_spawns` WHERE (`Instance_spawns_ID` = '2600004');

@@ -56,14 +56,14 @@ INSERT INTO `instance_infos` (`instance_infos_ID`, `Entry`, `ZoneID`, `Name`, `L
 INSERT INTO `instance_infos` (`instance_infos_ID`, `Entry`, `ZoneID`, `Name`, `LockoutTimer`, `TrashRespawnTimer`, `OrderExitZoneJumpID`, `DestrExitZoneJumpID`) VALUES ('60E', '60', '66', 'Gunbad Baracks', '1440', '5', '62928168', '62928168');
 
 
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '10');
-UPDATE `war_world_prod`.`instance_infos` SET `instance_infos_ID` = '160C' WHERE (`instance_infos_ID` = '160C');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '9fc2e9bc-9185-11e7-9c82-000c29d63948');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '0f9d3126-9184-11e7-9c82-000c29d63948');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '16ee359e-8f53-11e7-8540-00ffbe5f3044');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '4791faee-8596-11e7-8d92-00ffbe5f3044');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = 'cee83dcc-9183-11e7-9c82-000c29d63948');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = 'f335cce1-9183-11e7-9c82-000c29d63948');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '0bb21ab9-9ca6-11e7-8dcf-000c29d63948');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '6');
-DELETE FROM `war_world_prod`.`instance_infos` WHERE (`instance_infos_ID` = '5');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '10');
+UPDATE `war_world`.`instance_infos` SET `instance_infos_ID` = '160C' WHERE (`instance_infos_ID` = '160C');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '9fc2e9bc-9185-11e7-9c82-000c29d63948');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '0f9d3126-9184-11e7-9c82-000c29d63948');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '16ee359e-8f53-11e7-8540-00ffbe5f3044');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '4791faee-8596-11e7-8d92-00ffbe5f3044');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = 'cee83dcc-9183-11e7-9c82-000c29d63948');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = 'f335cce1-9183-11e7-9c82-000c29d63948');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '0bb21ab9-9ca6-11e7-8dcf-000c29d63948');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '6');
+DELETE FROM `war_world`.`instance_infos` WHERE (`instance_infos_ID` = '5');

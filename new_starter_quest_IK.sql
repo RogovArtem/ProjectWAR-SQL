@@ -43,8 +43,8 @@ INSERT INTO `war_world`.`creature_spawns` (`Guid`, `Entry`, `ZoneId`, `WorldX`, 
 delete from war_world.gameobject_protos where entry in (3100417,3100418,2119359,2119659);
 INSERT INTO war_world.gameobject_protos (Entry, Name, DisplayID, Scale, Level, Faction, HealthPoints, ScriptName, TokUnlock, Unks, Unk1, Unk2, Unk3, Unk4, CreatureId, CreatureCount, CreatureSpawnText, CreatureCooldownMinutes, IsAttackable) VALUES ('3100417', 'Rift in Time', '1583', '50', '1', '0', '1', '', NULL, '7680 0 18181 36 30501 64168', '0', '0', '25700', '0', '0', '0', NULL, '0', '0');
 INSERT INTO war_world.gameobject_protos (Entry, Name, DisplayID, Scale, Level, Faction, HealthPoints, ScriptName, TokUnlock, Unks, Unk1, Unk2, Unk3, Unk4, CreatureId, CreatureCount, CreatureSpawnText, CreatureCooldownMinutes, IsAttackable) VALUES ('3100418', 'Rift in Time', '1583', '50', '1', '0', '1', '', NULL, '7680 0 18181 36 30501 64168', '0', '0', '25700', '0', '0', '0', NULL, '0', '0');
-INSERT INTO war_world.gameobject_spawns (Guid, Entry, ZoneId, WorldX, WorldY, WorldZ, WorldO, DisplayID, Unk1, Unk2, Unk3, Unk4, Unks, DoorId, VfxState, TokUnlock, SoundId, AllowVfxUpdate, AlternativeName) VALUES ('2119359', '3100417', '106', '834940', '936182', '6976', '104', '1583', '0', '0', '0', '0', '7682 0 0 4 5 0 ', '0', '0', NULL, '0', '0', NULL);
-INSERT INTO war_world.gameobject_spawns (Guid, Entry, ZoneId, WorldX, WorldY, WorldZ, WorldO, DisplayID, Unk1, Unk2, Unk3, Unk4, Unks, DoorId, VfxState, TokUnlock, SoundId, AllowVfxUpdate, AlternativeName) VALUES ('2119659', '3100418', '100', '848490', '829913', '7976', '962', '1583', '0', '0', '0', '0', '7680 0 18181 36 30501 -1368 ', '0', '0', NULL, '0', '0', NULL);
+#INSERT INTO war_world.gameobject_spawns (Guid, Entry, ZoneId, WorldX, WorldY, WorldZ, WorldO, DisplayID, Unk1, Unk2, Unk3, Unk4, Unks, DoorId, VfxState, TokUnlock, SoundId, AllowVfxUpdate, AlternativeName) VALUES ('2119359', '3100417', '106', '834940', '936182', '6976', '104', '1583', '0', '0', '0', '0', '7682 0 0 4 5 0 ', '0', '0', NULL, '0', '0', NULL);
+#INSERT INTO war_world.gameobject_spawns (Guid, Entry, ZoneId, WorldX, WorldY, WorldZ, WorldO, DisplayID, Unk1, Unk2, Unk3, Unk4, Unks, DoorId, VfxState, TokUnlock, SoundId, AllowVfxUpdate, AlternativeName) VALUES ('2119659', '3100418', '100', '848490', '829913', '7976', '962', '1583', '0', '0', '0', '0', '7680 0 18181 36 30501 -1368 ', '0', '0', NULL, '0', '0', NULL);
 
 delete from war_world.zone_jumps where entry in (2119359,2119659);
 INSERT INTO war_world.zone_jumps (Entry, ZoneId, WorldX, WorldY, WorldZ, WorldO, Enabled, Type, InstanceID) VALUES ('2119359', '162', '123860', '124815', '13131', '0', '1', '0', NULL);
@@ -474,12 +474,12 @@ INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectI
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505154', '25', '3098', '40473', '0', '0');
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505154', '27', '7190', '40473', '0', '0');
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505154', '28', '7185', '40473', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '20', '2091', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '21', '2093', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '22', '2092', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '23', '2095', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '24', '2094', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '28', '2090', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '20', '2091', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '21', '2093', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '22', '2092', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '23', '2095', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '24', '2094', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505155', '28', '2090', '0', '0', '0');
 DELETE FROM  `war_world`.`quests_creature_finisher` where entry = 60508;
 INSERT INTO `war_world`.`quests_creature_finisher` (`Entry`, `CreatureID`) VALUES ('60508', '10505155');
 
@@ -493,14 +493,14 @@ INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectI
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505156', '24', '3212', '31868', '0', '0');
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505156', '25', '3211', '31868', '0', '0');
 INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505156', '28', '3207', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '10', '3414', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '11', '5740', '0', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '20', '3208', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '21', '3210', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '22', '3209', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '23', '3213', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '24', '3212', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '25', '3211', '31868', '0', '0');
-INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '28', '3207', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '10', '3414', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '11', '5740', '0', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '20', '3208', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '21', '3210', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '22', '3209', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '23', '3213', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '24', '3212', '31868', '0', '0');
+#NSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '25', '3211', '31868', '0', '0');
+#INSERT INTO `war_world`.`creature_items` (`Entry`, `SlotId`, `ModelId`, `EffectId`, `PrimaryColor`, `SecondaryColor`) VALUES ('10505157', '28', '3207', '31868', '0', '0');
 DELETE FROM  `war_world`.`quests_creature_finisher` where entry = 60516;
 INSERT INTO `war_world`.`quests_creature_finisher` (`Entry`, `CreatureID`) VALUES ('60516', '1008000');

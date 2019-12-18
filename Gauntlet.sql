@@ -1,48 +1,18 @@
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '1');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '2');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '3');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '4');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '9');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '10');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '11');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '12');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '13');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '14');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '15');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '16');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '17');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '18');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '19');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '20');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '21');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '22');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '23');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '24');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '25');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '26');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '27');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '28');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '29');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '30');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '31');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '32');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '33');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '34');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '35');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '36');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '37');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '38');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '39');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '40');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '41');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '42');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '43');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '44');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '45');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '46');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '47');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '48');
-DELETE FROM `war_world`.`scenario_gauntlet_spawn` WHERE (`SequenceId` = '49');
+USE `war_world`;
+CREATE TABLE `scenario_gauntlet_spawn`
+(`SequenceId` int,
+ `ScenarioId` int,
+ `ProtoId` int,
+ `Wave` int,
+ `Number` int,
+ `Name` varchar(255),
+ `WoundsModifier` int,
+ `InitiativeModifier` int,
+ `ToughnessModifier` int,
+ `StrengthModifier` int,
+ `ArmorModifier` int
+ );
+
 INSERT INTO `war_world`.`scenario_gauntlet_spawn` (`SequenceId`, `ScenarioId`, `ProtoId`, `Wave`, `Number`, `Name`, `WoundsModifier`, `InitiativeModifier`, `ToughnessModifier`, `StrengthModifier`, `ArmorModifier`) VALUES ('1', '2220', '10600001', '1', '5', '+', '0', '0', '100', '100', '100');
 INSERT INTO `war_world`.`scenario_gauntlet_spawn` (`SequenceId`, `ScenarioId`, `ProtoId`, `Wave`, `Number`, `Name`, `WoundsModifier`, `InitiativeModifier`, `ToughnessModifier`, `StrengthModifier`, `ArmorModifier`) VALUES ('2', '2220', '10600002', '1', '5', '++', '100', '100', '100', '100', '200');
 INSERT INTO `war_world`.`scenario_gauntlet_spawn` (`SequenceId`, `ScenarioId`, `ProtoId`, `Wave`, `Number`, `Name`, `WoundsModifier`, `InitiativeModifier`, `ToughnessModifier`, `StrengthModifier`, `ArmorModifier`) VALUES ('3', '2220', '10600003', '1', '5', '+', '100', '100', '0', '0', '0');
