@@ -10,3 +10,5 @@ UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '4216';
 UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '1419'; 
 UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '287'; 
 UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '137'; 
+UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '7310'; 
+UPDATE `war_world`.`creature_protos` SET `Unk1` = '1' WHERE `Entry` = '1419'; 
